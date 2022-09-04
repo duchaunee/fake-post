@@ -112,10 +112,12 @@ function myFunctionMediaQuery(x) {
             e.preventDefault();
 
             let text = $('.write input')
-            createComment(text.value.trim());
-            $('.write input').style.width = '100%'
-            $('.write .sent').style.display = 'none'
-            text.value = ""
+            if (text.value.trim().length > 0) {
+                createComment(text.value.trim());
+                $('.write input').style.width = '100%'
+                $('.write .sent').style.display = 'none'
+                text.value = ""
+            }
         })
     }
 }
